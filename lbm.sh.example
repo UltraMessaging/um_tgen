@@ -1,0 +1,17 @@
+#!/bin/sh
+# lbm.sh.example. Copy to "lbm.sh" and replace license info with yours.
+
+export LBM_LICENSE_INFO
+LBM_LICENSE_INFO="Product=LBM,UME,UMQ,UMDRO:Organization=xxxx:Expiration-Date=never:License-Key=xxxx xxxx xxxx xxxx"
+
+L=$HOME/UMP_6.15/
+LBM=$L/Linux-glibc-2.17-x86_64
+LBMJ=$L/java
+
+export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=$LBM/lib
+
+export PATH
+PATH="$LBM/bin:$L/SRS/bin:$L/MCS/bin:$PATH"
+
+# For convenience, you can also add the path to your Java 9 or beyond "bin" directory to PATH.
