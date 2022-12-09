@@ -386,9 +386,8 @@ Allows better self-documenting scripts.
 on different hosts.
 E.g. be able to burst multiple publishers at the same time.
 
-* It might be nice to support functions, parameters,
-arrays, strings, floating point variables, macros,
-structures, etc, etc, etc.
+* It might be nice to support if/then/else, for loops, while loops, functions, parameters,
+arrays, strings, floating point variables, macros, structures, etc, etc, etc.
 
 **OR NOT**
 
