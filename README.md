@@ -275,7 +275,7 @@ Example:
 set b 256
 set c 0x1F
 ````
-Sets variable b to 256 and varialbe c to 31.
+Sets variable b to 256 and variable c to 31.
 
 ## Label
 
@@ -293,7 +293,7 @@ label b
 
 ## Loop
 
-Decrement a varialbe and loop if positive.
+Decrement a variable and loop if positive.
 ````
 loop LAB_ID VAR_ID
 ````
