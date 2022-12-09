@@ -63,7 +63,11 @@ typedef struct my_data_s my_data_t;
 static int o_affinity_cpu = -1;
 static char *o_config = NULL;
 static int o_flags = 0;
+#ifdef UM_SSRC
 static int o_generic_src = 0;
+#else
+static int o_generic_src = 1;  /* If no smart source, force generic flag. */
+#endif
 static char *o_persist = NULL;
 static char *o_script_str = NULL;
 static char *o_topic_str = NULL;

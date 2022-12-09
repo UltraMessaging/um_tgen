@@ -97,6 +97,20 @@ This will send 700-byte messages at very close to
 You will see that the messages are separated by
 almost exactly 20 microseconds.
 
+# Smart Sources
+
+Starting with UM version 6.10,
+a fast, low-jitter form of UM source was introduced,
+called [Smart Source](https://ultramessaging.github.io/currdoc/doc/Design/advancedoptimizations.html#smartsources).
+Since we want the traffic generator to have the highest possible rate,
+um_tgen uses smart sources by default.
+You can override and force um_tgen to use generic sources with the "-g" command-line
+option.
+
+To build this tool with a version of UM prior to 6.10,
+omit the "-DUM_SSRC" from the build command in "tst.sh".
+This omits the code for Smart Sources.
+
 # Variables, Labels, and Looping
 
 The tgen package supports 26 general-purpose integer variables ('a' - 'z').
