@@ -232,7 +232,7 @@ Example:
 ````
 sendt 10 kbytes 30 kpersec 200 msec
 ````
-Send messages of 10,000 bytes at a rate of 30,000 messages/sec for 200 milliseconds.
+Send messages of 10,000 bytes each at a rate of 30,000 messages/sec for 200 milliseconds.
 
 Note that sendt will make its best effort to send at the requested rate.
 If you specify a rate that UM cannot support (like 999 mpersec),
@@ -254,7 +254,7 @@ Example:
 ````
 sendc 10 kbytes 30 kpersec 200 kmsgs
 ````
-Send messages of 10,000 bytes at a rate of 30,000 messages/sec for 200,000 messages.
+Send messages of 10,000 bytes each at a rate of 30,000 messages/sec for 200,000 messages.
 
 Note that sendc will make its best effort to send at the requested rate.
 If you specify a rate that UM cannot support (like 999 mpersec),
