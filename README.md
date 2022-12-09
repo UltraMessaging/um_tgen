@@ -155,9 +155,9 @@ Here's an example of using the 'l' special variable:
 ````
 ./um_tgen -a 2 -g -x um.xml -t topic1 -s "
   delay 200 msec # let topic resolution happen.
-  sentc 700 bytes 1 persec 1 msgs  # Send one message.
+  sendc 700 bytes 1 persec 1 msgs  # Send one message.
   set l 100  # Set 100% loss.
-  sentc 700 bytes 1 persec 1 msgs  # This message is lost.
+  sendc 700 bytes 1 persec 1 msgs  # This message is lost.
   set l 0  # Set 0% loss.
   delay 1 sec  # Let next session message trigger repair."
 ````
@@ -176,12 +176,11 @@ repl?
 ````
 The "um_tgen" command has created the context and the source,
 and is now waiting for you to enter a command.
-For example:
+For example, type a "sendc" command to send a message:
 ````
-repl? sentc 700 bytes 1 persec 1 msgs
+repl? sendc 700 bytes 1 persec 1 msgs
 repl?
 ````
-This sent one message.
 
 To exit the REPL loop, enter "control-d" (signals EOF on standard input).
 This continues the script to the next instruction.
