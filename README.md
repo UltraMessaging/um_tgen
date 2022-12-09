@@ -364,6 +364,10 @@ which uses the value in variable 'i'.
 and labels.
 Allows better self-documenting scripts.
 
+* It might be nice to be able to orchestrate multiple publishers
+on different hosts.
+E.g. be able to burst multiple publishers at the same time.
+
 * It might be nice to support functions, parameters,
 arrays, strings, floating point variables, macros,
 structures, etc, etc, etc.
