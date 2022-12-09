@@ -4,12 +4,12 @@ Traffic generator for Ultra Messaging.
 
 # Table of contents
 
-- [um_tgen - Traffic generator](#um_tgen---traffic-generator)
-- [Table of contents](#table-of-contents)
 - [Introduction](#introduction)
   - [Repository](#repository)
-- [Variables and Looping](#variables-and-looping)
-  - [Special Variables](#special-variables)
+- [Script](#script)
+- [Sending Messages](#sending-messages)
+- [Variables, Labels, and Looping](#variables-labels-and-looping)
+  - [Special Variable for Loss](#special-variable-for-loss)
 - [REPL](#repl)
 - [Instruction Set](#instruction-set)
   - [Comment](#comment)
@@ -32,6 +32,21 @@ I.e. "um_tgen.c" code knows how to talk UM,
 and the "tgen.c" code orchestrates the traffic generation.
 See https://github.com/fordsfords/tgen.
 
+## Repository
+
+See https://github.com/UltraMessaging/um_tgen for code and documentation.
+
+# Script
+
+The um_tgen tool uses the "little language" implemented by the "tgen" package.
+The scripts written in that language are very simple.
+
+The format of a script is a series of instructions separated by
+either newlines or semi-colons.
+Fields within an instruction are separated by one or more
+whitespace (spaces and tabs are considered equivelant).
+Indention is allowed.
+
 Here's an example usage:
 ````
 ./um_tgen -a 2 -g -x um.xml -t topic1 -s "
@@ -45,11 +60,43 @@ This same script could be written without comments and with semi-colons instead 
 ./um_tgen -a 2 -g -x um.xml -t topic1 -s "delay 200 msec; sendc 700 bytes 2 persec 10 msgs; delay 2 sec"
 ````
 
-## Repository
+Each instruction consists of a keyword,
+followed by zero or more values and keywords.
+The field format and ordering for a given instruction is fixed.
+For example, this is a valid "sendt" instruction:
+````
+sendt 700 bytes 50 kpersec 3 sec
+````
+These are invalid:
+````
+sendt 50 kpersec 700 bytes 3 sec  # Field order is wrong.
+sendt 700 bytes 50 kpersec        # 2 fields missing at end.
+SendT 700 Bytes 50 KPerSec 3 Sec  # Upper-case not allowed.
+````
 
-See https://github.com/UltraMessaging/um_tgen for code and documentation.
+Numeric fields may be specified in hexidecimal by prefixing
+with "0x".
 
-# Variables and Looping
+# Sending Messages
+
+Sending messages is the basic function of a traffic generator.
+The um_tgen tool has two instructions:
+* sendt - send messages for a specified period of time.
+* sendc - send a specific number of messages.
+
+Both allow specifying a sending rate.
+It uses a busy-looping algorithm to achieve
+even spacing between messages.
+For example:
+````
+sendt 700 bytes 50 kpersec 3 sec
+````
+This will send 700-byte messages at very close to
+50,000 messages per second for 3 seconds.
+You will see that the messages are separated by
+almost exactly 20 microseconds.
+
+# Variables, Labels, and Looping
 
 The tgen package supports 26 general-purpose integer variables ('a' - 'z').
 They are most commonly used with the "loop" instruction,
@@ -72,7 +119,7 @@ This is repeated 10 times.
 Note that the label ('a' - 'z') are a separate name space from variable ('a' - 'z').
 I.e. you can have a label 'a' and an unrelated variable 'a'.
 
-## Special Variables
+## Special Variable for Loss
 
 Although the tgen package does not assign any special meaning to any variable,
 the application using tgen can assign meaning according to its needs.
@@ -107,17 +154,16 @@ The "um_tgen" command has created the context and the source,
 and is now waiting for you to enter a command.
 For example:
 ````
-./um_tgen -a 2 -g -x um.xml -t topic1 -s "repl"
 repl? sentc 700 bytes 1 persec 1 msgs
 repl?
 ````
 This sent one message.
 
-To exit the REPL loop and delete the source and context,
-enter "control-d" (signals EOF on standard input).
+To exit the REPL loop, enter "control-d" (signals EOF on standard input).
+This continues the script to the next instruction.
 
-However, note that the REPL is purely interactive,
-so the "label" and "loop" instructions don't work.
+However, note that the REPL is purely interactive.
+The "label" and "loop" instructions don't work.
 
 # Instruction Set
 
