@@ -37,6 +37,15 @@ See https://github.com/fordsfords/tgen.
 
 See https://github.com/UltraMessaging/um_tgen for code and documentation.
 
+# Build
+
+To build the tool, download the source files from GitHub.
+Then:
+
+# Copy "lbm.sh.example" to "lbm.sh".
+# Edit "lbm.sh" and insert your license key and UM installation path.
+# Run the "tst.sh" script. This builds and runs the tool.
+
 # Script
 
 The um_tgen tool uses the "little language" implemented by the "tgen" package.
