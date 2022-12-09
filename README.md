@@ -182,7 +182,7 @@ repl? sendc 700 bytes 1 persec 1 msgs
 repl?
 ````
 
-To exit the REPL loop, enter "control-d" (signals EOF on standard input).
+To exit the REPL loop, type "ctrl-d" (signals EOF on standard input).
 This continues the script to the next instruction.
 
 However, note that the REPL is purely interactive.
@@ -342,8 +342,7 @@ Example:
 repl
 ````
 Usually used interactively,
-with EOF supplied by typing
-<control-d>.
+with EOF supplied by typing "ctrl-d".
 
 # TODO
 
