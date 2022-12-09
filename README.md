@@ -106,6 +106,10 @@ This will send 700-byte messages at very close to
 You will see that the messages are separated by
 almost exactly 20 microseconds.
 
+Note that the tool does not initialize the
+message contents.
+It's just whatever malloc returned.
+
 # Smart Sources
 
 Starting with UM version 6.10,
@@ -234,6 +238,10 @@ sendt 10 kbytes 30 kpersec 200 msec
 ````
 Send messages of 10,000 bytes each at a rate of 30,000 messages/sec for 200 milliseconds.
 
+Note that the tool does not initialize the
+message contents.
+It's just whatever malloc returned.
+
 Note that sendt will make its best effort to send at the requested rate.
 If you specify a rate that UM cannot support (like 999 mpersec),
 it will simply send without any delay between sends.
@@ -255,6 +263,10 @@ Example:
 sendc 10 kbytes 30 kpersec 200 kmsgs
 ````
 Send messages of 10,000 bytes each at a rate of 30,000 messages/sec for 200,000 messages.
+
+Note that the tool does not initialize the
+message contents.
+It's just whatever malloc returned.
 
 Note that sendc will make its best effort to send at the requested rate.
 If you specify a rate that UM cannot support (like 999 mpersec),
