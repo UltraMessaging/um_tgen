@@ -4,6 +4,25 @@ Traffic generator for Ultra Messaging.
 
 # Table of contents
 
+- [um_tgen - Traffic generator](#um_tgen---traffic-generator)
+- [Table of contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Repository](#repository)
+- [Variables and Looping](#variables-and-looping)
+  - [Special Variables](#special-variables)
+- [REPL](#repl)
+- [Instruction Set](#instruction-set)
+  - [Comment](#comment)
+  - [Sendt](#sendt)
+  - [Sendc](#sendc)
+  - [Set](#set)
+  - [Label](#label)
+  - [Loop](#loop)
+  - [Delay](#delay)
+  - [Repl](#repl)
+- [TODO](#todo)
+- [COPYRIGHT AND LICENSE](#copyright-and-license)
+
 <sup>(table of contents from https://luciopaiva.com/markdown-toc/)</sup>
 
 # Introduction
@@ -25,6 +44,10 @@ This same script could be written without comments and with semi-colons instead 
 ````
 ./um_tgen -a 2 -g -x um.xml -t topic1 -s "delay 200 msec; sendc 700 bytes 2 persec 10 msgs; delay 2 sec"
 ````
+
+## Repository
+
+See https://github.com/UltraMessaging/um_tgen for code and documentation.
 
 # Variables and Looping
 
@@ -272,7 +295,7 @@ making a "little language" rich.
 Olin Shivers makes a good case against in the introductory sections of
 https://3e8.org/pub/scheme/doc/Universal%20Scripting%20Framework%20(Lambda%20as%20little%20language).pdf
 
-## COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 All of the documentation and software included in this and any
 other Informatica Ultra Messaging GitHub repository
@@ -294,7 +317,3 @@ BE LIABLE TO LICENSEE FOR LOST PROFITS, CONSEQUENTIAL, INCIDENTAL, SPECIAL OR
 INDIRECT DAMAGES ARISING OUT OF OR RELATED TO THIS AGREEMENT OR THE
 TRANSACTIONS CONTEMPLATED HEREUNDER, EVEN IF INFORMATICA HAS BEEN APPRISED OF
 THE LIKELIHOOD OF SUCH DAMAGES.
-
-## Repository
-
-See https://github.com/UltraMessaging/um_tgen for code and documentation.
