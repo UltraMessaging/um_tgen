@@ -352,7 +352,7 @@ value with each message.
 Possibly even "verifiable" messages (per the
 UM example apps).
 
-* It might be nice to support multiple sources.
+* It might be nice to support multiple sources (like lbmmsrc or lbmstrm).
 
 * It might be nice to support file inclusion for scripts.
 
