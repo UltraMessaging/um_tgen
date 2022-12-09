@@ -292,7 +292,7 @@ That gives you the full richness and speed of C.
 
 It's hard to justify putting too much effort into
 making a "little language" rich.
-Olin Shivers makes a good case against in the introductory sections of
+Olin Shivers makes a good case against it in the introductory sections of
 https://3e8.org/pub/scheme/doc/Universal%20Scripting%20Framework%20(Lambda%20as%20little%20language).pdf
 
 # COPYRIGHT AND LICENSE
