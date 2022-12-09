@@ -191,13 +191,12 @@ The "label" and "loop" instructions don't work.
 # Usage Help
 
 ````
-Usage: um_tgen [-h] [-a affinity_cpu] [-c config] [-f flags] [-g] [-p persist_mode] -s script_string [-x xml_config]
+Usage: um_tgen [-h] [-a affinity_cpu] [-c config] [-g] [-p persist_mode] -s script_string [-x xml_config]
 
 where:
   -h : print help
   -a affinity_cpu : bitmap for CPU affinity for send thread [-1]
   -c config : configuration file; can be repeated []
-  -f flags : set test flags [0x0]
   -g : generic source [0]
   -p ''|r|s : persist mode (empty=streaming, r=RPP, s=SPP) []
   -s 'script' : test script (required)

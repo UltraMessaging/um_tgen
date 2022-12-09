@@ -62,7 +62,6 @@ typedef struct my_data_s my_data_t;
  */
 static int o_affinity_cpu = -1;
 static char *o_config = NULL;
-static int o_flags = 0;
 #ifdef UM_SSRC
 static int o_generic_src = 0;
 #else
@@ -74,7 +73,7 @@ static char *o_topic_str = NULL;
 static char *o_xml_config = NULL;
 
 
-char usage_str[] = "Usage: um_tgen [-h] [-a affinity_cpu] [-c config] [-f flags] [-g] [-p persist_mode] -s script_string [-x xml_config]\n";
+char usage_str[] = "Usage: um_tgen [-h] [-a affinity_cpu] [-c config] [-g] [-p persist_mode] -s script_string [-x xml_config]\n";
 
 void usage(char *msg)
 {
@@ -92,12 +91,11 @@ void help()
       "  -h : print help\n"
       "  -a affinity_cpu : bitmap for CPU affinity for send thread [%d]\n"
       "  -c config : configuration file; can be repeated [%s]\n"
-      "  -f flags : set test flags [0x%x]\n"
       "  -g : generic source [%d]\n"
       "  -p ''|r|s : persist mode (empty=streaming, r=RPP, s=SPP) [%s]\n"
       "  -s 'script' : test script (required)\n"
       "  -x xml_config : XML configuration file [%s]\n"
-      , o_affinity_cpu, o_config, o_flags, o_generic_src, o_persist, o_xml_config
+      , o_affinity_cpu, o_config, o_generic_src, o_persist, o_xml_config
   );
   CPRT_NET_CLEANUP;
   exit(0);
@@ -116,7 +114,7 @@ void get_my_options(int argc, char **argv, tgen_t *tgen)
   o_topic_str = CPRT_STRDUP("");
   o_xml_config = CPRT_STRDUP("");
 
-  while ((opt = cprt_getopt(argc, argv, "ha:c:f:gp:s:t:x:")) != EOF) {
+  while ((opt = cprt_getopt(argc, argv, "ha:c:gp:s:t:x:")) != EOF) {
     switch (opt) {
       case 'h': help(); break;
       case 'a': CPRT_ATOI(cprt_optarg, o_affinity_cpu); break;
@@ -125,7 +123,6 @@ void get_my_options(int argc, char **argv, tgen_t *tgen)
                 o_config = CPRT_STRDUP(cprt_optarg);
                 E(lbm_config(o_config));
                 break;
-      case 'f': CPRT_ATOI(cprt_optarg, o_flags); break;
       case 'g': o_generic_src = 1; break;
       case 'p': free(o_persist); o_persist = CPRT_STRDUP(cprt_optarg); break;
       /* Allow -s to be repeated, loading each config file in succession. */
