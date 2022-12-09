@@ -11,6 +11,7 @@ Traffic generator for Ultra Messaging.
 - [Variables, Labels, and Looping](#variables-labels-and-looping)
   - [Special Variable for Loss](#special-variable-for-loss)
 - [REPL](#repl)
+- [Usage Help](#usage-help)
 - [Instruction Set](#instruction-set)
   - [Comment](#comment)
   - [Sendt](#sendt)
