@@ -311,7 +311,7 @@ label a
   loop b j
 loop a i
 ````
-Nested loop with delay executed 15 times.
+Nested loops. The delay is executed 5 * 3 = 15 times.
 
 ## Delay
 
