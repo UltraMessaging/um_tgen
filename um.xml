@@ -21,7 +21,10 @@
       <options type="source">
         <option name="transport" default-value="lbtrm"/>
         <option name="implicit_batching_minimum_length" default-value="1"/>
-        <option name="retransmit_retention_size_limit" default-value="71000000"/>
+        <option name="smart_src_user_buffer_count" default-value="2"/>
+        <option name="smart_src_max_message_length" default-value="1424"/>
+        <!-- <option name="retransmit_retention_size_limit" default-value="71000000"/> -->
+        <!-- <option name="smart_src_retention_buffer_count" default-value="101000"/> -->
         <option name="ume_message_stability_timeout" default-value="0"/>
         <option name="ume_flight_size" default-value="100000"/>
         <option name="ume_flight_size_bytes" default-value="140000000"/>

@@ -201,6 +201,7 @@ where:
   -h : print help
   -a affinity_cpu : bitmap for CPU affinity for send thread [-1]
   -c config : configuration file; can be repeated []
+  -f flags : flags to pass to tgen_create() [0]
   -g : generic source [0]
   -p ''|r|s : persist mode (empty=streaming, r=RPP, s=SPP) []
   -s 'script' : test script (required)
