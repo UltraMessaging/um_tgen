@@ -33,20 +33,28 @@ I.e. "um_tgen.c" code knows how to talk UM,
 and the "tgen.c" code orchestrates the traffic generation.
 See https://github.com/fordsfords/tgen.
 
+Note that this tool does not have a fancy GUI.
+It is mostly intended for Unix command-line use,
+although it also has a limited interactive mode
+(also Unix command-line based).
+
 ## Repository
 
 See https://github.com/UltraMessaging/um_tgen for code and documentation.
 
-# Build
+# Quick Start
 
 To build the tool, download the source files from GitHub.
 Then:
 
-# Copy "lbm.sh.example" to "lbm.sh".
-# Edit "lbm.sh" and insert your license key and UM installation path.
-# Run the "tst.sh" script. This builds and runs the tool.
+1. Log into Linux system with Ultra Messaging installed.
+1. Download the um_tgen repository.
+1. Copy "lbm.sh.example" to "lbm.sh".
+Edit "lbm.sh" and insert your license key and UM installation path.
+1. Run the "tst.sh" script.
+This builds and runs a very small "smoke test" of tool.
 
-# Script
+# Scripting Language
 
 The um_tgen tool uses the "little language" implemented by the "tgen" package.
 The scripts written in that language are very simple.
