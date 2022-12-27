@@ -52,6 +52,7 @@ struct my_data_s {
 #ifdef UM_SSRC
   lbm_ssrc_t *ssrc;
 #endif
+  int buffer_len;
   char *buffer;
 };
 typedef struct my_data_s my_data_t;
@@ -178,7 +179,8 @@ void create_source(my_data_t *my_data)
 
   if (o_generic_src) {
     E(lbm_src_create(&my_data->src, ctx, topic_obj, NULL, NULL, NULL));
-    CPRT_ENULL(my_data->buffer = (char *)malloc(65536));
+    CPRT_ENULL(my_data->buffer_len = 65536;
+    CPRT_ENULL(my_data->buffer = (char *)malloc(my_data->buffer_len));
   }
 #ifdef UM_SSRC
   else {
@@ -208,11 +210,16 @@ void my_send(tgen_t *tgen, int len)
 {
   my_data_t *my_data = (my_data_t *)tgen_user_data_get(tgen);
 
-  if (o_generic_src) {  /* If using smart src API */
+  if (len > my_data->buffer_len) {  /* Expand buffer if necessary. */
+    my_data->buffer_len = len;
+    CPRT_ENULL(my_data->buffer = (char *)malloc(my_data->buffer_len));
+  }
+
+  if (o_generic_src) {  /* If using regular src API. */
     E(lbm_src_send(my_data->src, my_data->buffer, len, 0));
   }
 #ifdef UM_SSRC
-  else {
+  else {  /* Using Smart Source API. */
     E(lbm_ssrc_send_ex(my_data->ssrc, my_data->buffer, len, 0, NULL));
   }
 #endif
@@ -223,9 +230,9 @@ void my_variable_change(tgen_t *tgen, char var_id, int value)
 {
   switch (var_id) {
     /* Variable "l" controls LBT-RM loss rate. */
-    case 'l': lbm_set_lbtrm_src_loss_rate(tgen_variable_get(tgen, var_id)); break;
+    case 'l': lbm_set_lbtrm_src_loss_rate(value); break;
   }
-}
+}  /* my_variable_change */
 
 
 int main(int argc, char **argv)
