@@ -179,7 +179,7 @@ void create_source(my_data_t *my_data)
 
   if (o_generic_src) {
     E(lbm_src_create(&my_data->src, ctx, topic_obj, NULL, NULL, NULL));
-    CPRT_ENULL(my_data->buffer_len = 65536;
+    my_data->buffer_len = 65536;
     CPRT_ENULL(my_data->buffer = (char *)malloc(my_data->buffer_len));
   }
 #ifdef UM_SSRC
