@@ -4,27 +4,32 @@ Traffic generator for Ultra Messaging.
 
 # Table of contents
 
-- [Introduction](#introduction)
-  - [Repository](#repository)
-- [Script](#script)
-- [Sending Messages](#sending-messages)
-- [Variables, Labels, and Looping](#variables-labels-and-looping)
-  - [Special Variable for Loss](#special-variable-for-loss)
-- [REPL](#repl)
-- [Usage Help](#usage-help)
-- [Instruction Set](#instruction-set)
-  - [Comment](#comment)
-  - [Sendt](#sendt)
-  - [Sendc](#sendc)
-  - [Set](#set)
-  - [Label](#label)
-  - [Loop](#loop)
-  - [Delay](#delay)
-  - [Repl](#repl)
-- [TODO](#todo)
-- [COPYRIGHT AND LICENSE](#copyright-and-license)
-
-<sup>(table of contents from https://luciopaiva.com/markdown-toc/)</sup>
+<!-- mdtoc-start -->
+&bull; [um_tgen - Traffic generator](#um_tgen---traffic-generator)  
+&bull; [Table of contents](#table-of-contents)  
+&bull; [Introduction](#introduction)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Repository](#repository)  
+&bull; [Quick Start](#quick-start)  
+&bull; [Scripting Language](#scripting-language)  
+&bull; [Sending Messages](#sending-messages)  
+&bull; [Smart Sources](#smart-sources)  
+&bull; [Variables, Labels, and Looping](#variables-labels-and-looping)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Special Variable for Loss](#special-variable-for-loss)  
+&bull; [REPL](#repl)  
+&bull; [Usage Help](#usage-help)  
+&bull; [Instruction Set](#instruction-set)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Comment](#comment)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Sendt](#sendt)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Sendc](#sendc)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Set](#set)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Label](#label)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Loop](#loop)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Delay](#delay)  
+&nbsp;&nbsp;&nbsp;&nbsp;&bull; [Repl](#repl)  
+&bull; [TODO](#todo)  
+&bull; [COPYRIGHT AND LICENSE](#copyright-and-license)  
+<!-- TOC created by '../mdtoc/mdtoc.pl README.md' (see https://github.com/fordsfords/mdtoc) -->
+<!-- mdtoc-end -->
 
 # Introduction
 
