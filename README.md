@@ -15,7 +15,7 @@ Traffic generator for Ultra Messaging.
 &bull; [Smart Sources](#smart-sources)  
 &bull; [Variables, Labels, and Looping](#variables-labels-and-looping)  
 &nbsp;&nbsp;&nbsp;&nbsp;&bull; [Special Variable for Loss](#special-variable-for-loss)  
-&bull; [REPL](#repl)  
+&bull; [Interactive REPL](#interactive-repl)  
 &bull; [Usage Help](#usage-help)  
 &bull; [Instruction Set](#instruction-set)  
 &nbsp;&nbsp;&nbsp;&nbsp;&bull; [Comment](#comment)  
@@ -28,7 +28,7 @@ Traffic generator for Ultra Messaging.
 &nbsp;&nbsp;&nbsp;&nbsp;&bull; [Repl](#repl)  
 &bull; [TODO](#todo)  
 &bull; [COPYRIGHT AND LICENSE](#copyright-and-license)  
-<!-- TOC created by '../mdtoc/mdtoc.pl README.md' (see https://github.com/fordsfords/mdtoc) -->
+<!-- TOC created by '/home/sford/bin/mdtoc.pl README.md' (see https://github.com/fordsfords/mdtoc) -->
 <!-- mdtoc-end -->
 
 # Introduction
@@ -179,7 +179,7 @@ Here's an example of using the 'l' special variable:
   delay 1 sec  # Let next session message trigger repair."
 ````
 
-# REPL
+# Interactive REPL
 
 A [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)
 is a "Read-Eval-Print Loop",
